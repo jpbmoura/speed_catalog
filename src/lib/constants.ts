@@ -2,7 +2,7 @@
 export const GOOGLE_SHEETS_API_KEY =
   import.meta.env.VITE_GOOGLE_SHEETS_API_KEY ?? "";
 export const SHEET_ID = import.meta.env.VITE_GOOGLE_SHEET_ID ?? "";
-export const SHEET_RANGE = "A2:H1000"; // Skip header row, adjust as needed
+export const SHEET_RANGE = "A2:J5000"; // Skip header row, adjust as needed
 export const POLLING_INTERVAL = 300000; // 5 minutes in milliseconds
 
 // WhatsApp Configuration

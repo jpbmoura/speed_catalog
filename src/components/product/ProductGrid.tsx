@@ -1,7 +1,7 @@
-import React from 'react';
-import { ProductCard } from './ProductCard';
-import { Product } from '../../types';
-import { Loader } from '../ui/Loader';
+import React from "react";
+import { ProductCard } from "./ProductCard";
+import { Product } from "../../types";
+import { Loader } from "../ui/Loader";
 
 interface ProductGridProps {
   products: Product[];
@@ -10,11 +10,11 @@ interface ProductGridProps {
   emptyMessage?: string;
 }
 
-export const ProductGrid: React.FC<ProductGridProps> = ({ 
-  products, 
-  isLoading, 
+export const ProductGrid: React.FC<ProductGridProps> = ({
+  products,
+  isLoading,
   isRefreshing = false,
-  emptyMessage = 'No products found'
+  emptyMessage = "No products found",
 }) => {
   if (isLoading) {
     return (
@@ -23,7 +23,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
       </div>
     );
   }
-  
+
   if (products.length === 0) {
     return (
       <div className="flex justify-center items-center min-h-[400px]">
@@ -31,7 +31,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
       </div>
     );
   }
-  
+
   return (
     <div className="relative">
       {isRefreshing && (
@@ -39,7 +39,7 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
           <Loader size="small" />
         </div>
       )}
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />

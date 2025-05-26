@@ -20,7 +20,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     regular_price,
     promo_price,
     promo_active,
-    product_description,
     stock_status,
   } = product;
 
@@ -101,10 +100,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </span>
           )}
         </div>
-
-        <p className="text-sm text-gray-500 mb-3 line-clamp-2">
-          {product_description}
-        </p>
 
         <div className="flex justify-between items-center">
           <span className={`text-sm font-medium ${stockStatusInfo.color}`}>
